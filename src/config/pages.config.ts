@@ -1,5 +1,5 @@
 export const PAGES = {
-  HOME: '/',
-  ADVICE: '/advice',
-  EMPLOYEEPAGE: (employeeName: string) => `/employeePage/${employeeName}`,
+  HOME: "/",
+  ADVICE: "/advice",
+  EMPLOYEEPAGE: (id: string) => `/employee/${id}`,
 };
