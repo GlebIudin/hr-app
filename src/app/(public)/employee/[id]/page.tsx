@@ -25,6 +25,7 @@ export default async function Employee({ params }: PageProps) {
         width={250}
         height={250}
         className="rounded-xl"
+        unoptimized
       />
       <div>
         <h1>{employee.name}</h1>
