@@ -19,6 +19,7 @@ export function Employee({ employee }: Props) {
               width={100}
               height={100}
               className="rounded-full object-cover border-2 border-gray-100"
+              unoptimized
             />
           </div>
           <div>
