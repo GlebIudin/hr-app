@@ -9,10 +9,10 @@ interface Props {
 
 export function Employee({ employee }: Props) {
   return (
-    <div className="border border-white/10 rounded-xl bg-black text-white shadow-md">
-      <Link href={PAGES.EMPLOYEEPAGE(employee.id)}>
-        <div className="grid grid-cols-6 gap-30">
-          <div className="w-20 h-20 flex-shrink-0">
+    <div className="border border-white/10 rounded-xl bg-black text-white shadow-md hover:bg-white/10 transition">
+      <Link className="block" href={PAGES.EMPLOYEEPAGE(employee.id)}>
+        <div className="grid grid-cols-[80px_1fr_auto] gap-x-6 gap-y-3 items-center p-4">
+          <div className="w-20 h-20">
             <Image
               src={employee.photoUrl}
               alt={employee.name}
@@ -21,33 +21,21 @@ export function Employee({ employee }: Props) {
               className="rounded-full object-cover border-2 border-gray-100"
             />
           </div>
+          <div>
+            <h3 className="text-lg font-semibold">{employee.name}</h3>
 
-          <div className="">
-            <h3 className="">
-              {employee.name}
-            </h3>
+            {employee.position && (
+              <p className="text-sm text-white/70">{employee.position}</p>
+            )}
+            {employee.department && (
+              <p className="text-sm text-white/70">{employee.department}</p>
+            )}
           </div>
 
-          {employee.position && (
-            <p className="">{employee.position}</p>
-          )}
-          {employee.department && (
-            <p className="">{employee.department}</p>
-          )}
-
-          <div className="">
-            <div className="">
-              <span>Возраст:</span>
-              <span>{employee.age}</span>
-            </div>
+          <div className="text-sm text-right whitespace-nowrap">
+            <p>Возраст: {employee.age}</p>
+            <p>Город: {employee.city}</p>
           </div>
-
-          {employee.city && (
-            <p>
-              <span>Город: </span>
-              <span>{employee.city}</span>
-            </p>
-          )}
         </div>
       </Link>
     </div>
