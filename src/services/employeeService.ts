@@ -6,7 +6,7 @@ export async function fetchEmployees(count = 10): Promise<IEmployee[]> {
   const positions = ['Frontend-разработчик', 'Backend-разработчик', 'Системный аналитик', 'Android-разработчик']
 
   const response = await fetch(
-    `https://randomuser.me/api/?results=${count}&inc=name,dob,picture,email,phone,location,login`,
+    `https://randomuser.me/api/?results=${count}&seed=hr-app&&inc=name,dob,picture,email,phone,location,login`,
     {
       cache: "force-cache",
     },
